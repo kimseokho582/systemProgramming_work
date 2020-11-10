@@ -1,0 +1,6 @@
+﻿  ConsoleApplication3.cpp
+C:\Users\kim\Documents\GitHub\work\ConsoleApplication3\ConsoleApplication3\ConsoleApplication3.cpp(16,36): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\kim\Documents\GitHub\work\ConsoleApplication3\ConsoleApplication3\ConsoleApplication3.cpp(16,27): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\kim\Documents\GitHub\work\ConsoleApplication3\ConsoleApplication3\ConsoleApplication3.cpp(17,39): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\kim\Documents\GitHub\work\ConsoleApplication3\ConsoleApplication3\ConsoleApplication3.cpp(17,30): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  ConsoleApplication3.vcxproj -> C:\Users\kim\Documents\GitHub\work\ConsoleApplication3\Debug\ConsoleApplication3.exe
