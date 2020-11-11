@@ -1,4 +1,3 @@
-
 #include <gl/glut.h>					
 #include <gl/gl.h>						
 #include <gl/glu.h>	
@@ -29,7 +28,6 @@ void MyDisplay() {
 
 	glFlush();
 }
-
 
 void KB(unsigned char KeyPressed, int X, int Y) {
 

@@ -14,7 +14,7 @@ void MyDisplay() {
         for (int j = 0; j < 3; j++) {
             glPushMatrix();
             glColor3f(0.3 * j, 0.1 * i, 0.0);
-            glTranslatef(0.1 * j, 0.1 * i, 0);
+            glTranslatef(0.2 * j, 0.2 * i, 0);
             glutSolidCube(0.1);
             glPopMatrix();
         }
