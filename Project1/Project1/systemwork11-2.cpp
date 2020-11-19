@@ -39,10 +39,6 @@ public:
 			cout << list[i].getdata()<<"   "<<list[i].getnum()<<"   "<< list[i].getlabelflag() << endl;
 	}
 
-	void label() {
-
-	}
-
 };
 
 int main() {

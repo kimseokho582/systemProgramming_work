@@ -124,7 +124,6 @@ int main() {
 			}
 		}
 	}
-
 	in2.close();
 
 	ifstream in3;

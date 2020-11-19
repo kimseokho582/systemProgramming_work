@@ -1,13 +1,3 @@
-﻿  openglwork11-3.cpp
-C:\Users\kim\Documents\GitHub\work\ConsoleApplication3\ConsoleApplication3\openglwork11-3.cpp(13,50): warning C4305: '초기화 중': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\kim\Documents\GitHub\work\ConsoleApplication3\ConsoleApplication3\openglwork11-3.cpp(15,50): warning C4305: '초기화 중': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\kim\Documents\GitHub\work\ConsoleApplication3\ConsoleApplication3\openglwork11-3.cpp(18,52): warning C4305: '초기화 중': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\kim\Documents\GitHub\work\ConsoleApplication3\ConsoleApplication3\openglwork11-3.cpp(19,52): warning C4305: '초기화 중': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\kim\Documents\GitHub\work\ConsoleApplication3\ConsoleApplication3\openglwork11-3.cpp(20,53): warning C4305: '초기화 중': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\kim\Documents\GitHub\work\ConsoleApplication3\ConsoleApplication3\openglwork11-3.cpp(50,39): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\kim\Documents\GitHub\work\ConsoleApplication3\ConsoleApplication3\openglwork11-3.cpp(51,39): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\kim\Documents\GitHub\work\ConsoleApplication3\ConsoleApplication3\openglwork11-3.cpp(52,17): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\kim\Documents\GitHub\work\ConsoleApplication3\ConsoleApplication3\openglwork11-3.cpp(75,21): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\kim\Documents\GitHub\work\ConsoleApplication3\ConsoleApplication3\openglwork11-3.cpp(78,19): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\kim\Documents\GitHub\work\ConsoleApplication3\ConsoleApplication3\openglwork11-3.cpp(85,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+﻿  openglstudy12-1.cpp
+C:\Users\kim\Documents\GitHub\work\ConsoleApplication3\ConsoleApplication3\openglstudy12-1.cpp(7,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
   ConsoleApplication3.vcxproj -> C:\Users\kim\Documents\GitHub\work\ConsoleApplication3\Debug\ConsoleApplication3.exe
