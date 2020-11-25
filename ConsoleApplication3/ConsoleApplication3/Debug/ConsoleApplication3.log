@@ -1,2 +1,8 @@
-﻿  openglwork12-3.cpp
+﻿  opengl8_3.cpp
+C:\Users\kim\Documents\GitHub\work\ConsoleApplication3\ConsoleApplication3\opengl8_3.cpp(7,47): warning C4305: '초기화 중': 'double'에서 'GLfloat'(으)로 잘립니다.
+C:\Users\kim\Documents\GitHub\work\ConsoleApplication3\ConsoleApplication3\opengl8_3.cpp(9,47): warning C4305: '초기화 중': 'double'에서 'GLfloat'(으)로 잘립니다.
+C:\Users\kim\Documents\GitHub\work\ConsoleApplication3\ConsoleApplication3\opengl8_3.cpp(13,49): warning C4305: '초기화 중': 'double'에서 'GLfloat'(으)로 잘립니다.
+C:\Users\kim\Documents\GitHub\work\ConsoleApplication3\ConsoleApplication3\opengl8_3.cpp(14,49): warning C4305: '초기화 중': 'double'에서 'GLfloat'(으)로 잘립니다.
+C:\Users\kim\Documents\GitHub\work\ConsoleApplication3\ConsoleApplication3\opengl8_3.cpp(61,23): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+C:\Users\kim\Documents\GitHub\work\ConsoleApplication3\ConsoleApplication3\opengl8_3.cpp(77,23): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
   ConsoleApplication3.vcxproj -> C:\Users\kim\Documents\GitHub\work\ConsoleApplication3\Debug\ConsoleApplication3.exe
