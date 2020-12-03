@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="systemwork11-3.cpp">
+    <ClCompile Include="assembler_implementation.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
