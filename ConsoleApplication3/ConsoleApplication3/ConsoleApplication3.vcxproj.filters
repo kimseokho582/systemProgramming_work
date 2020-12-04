@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="opengl14-1.cpp">
+    <ClCompile Include="opengl14-3.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
