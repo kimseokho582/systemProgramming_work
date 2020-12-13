@@ -20,10 +20,13 @@ int myImg[7][8] = {
 int check[7][8] = { 0, }; // 칠한곳 체크
 
 void drawPoint(int x, int y, float color[3]) { // 점찍기
+    glPushMatrix();
+    glPointSize(20);
     glBegin(GL_POINTS);
     glColor3fv(color);
     glVertex2f(x, y);
     glEnd();
+  
     glFlush();
 }
 
@@ -37,7 +40,6 @@ void drawBoundry() { //테두리
 }
 
 void boundaryFill(int x, int y, float fillColor[3], float boundaryColor[3]) { 
-
     if ((myImg[x][y] == 0) && (check[x][y] == 0)) {
         drawPoint(x, y, fillColor);
         printf("x: %d, y: %d\n", x, y);
@@ -46,7 +48,9 @@ void boundaryFill(int x, int y, float fillColor[3], float boundaryColor[3]) {
         boundaryFill(x - 1, y, fillColor, boundaryColor);
         boundaryFill(x, y + 1, fillColor, boundaryColor);
         boundaryFill(x, y - 1, fillColor, boundaryColor);
+
     }
+
 }
 
 void MyDisplay() {
@@ -65,7 +69,7 @@ int main(int argc, char** argv) {
     glutCreateWindow("OpenGL Drawing Example");
 
     glClearColor(0.2, 0.2, 0.2, 0.0);
-    gluOrtho2D(0.0, 10.0, 0.0, 10.0);
+    gluOrtho2D(-2.0, 10.0, -2.0, 10.0);
     glutDisplayFunc(MyDisplay);
     glutMainLoop();
 }

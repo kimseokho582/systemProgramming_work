@@ -33,7 +33,6 @@ public:
 		list[listindex].table_set(d, n,l);
 		listindex++;
 	}
-
 	void print() {
 		for (int i = 0; i < listindex; i++)
 			cout << list[i].getdata()<<"   "<<list[i].getnum()<<"   "<< list[i].getlabelflag() << endl;
@@ -43,7 +42,6 @@ public:
 
 int main() {
 	Data D;
-
 	char instr[8][8] = { "SEGMENT","ASSUME","MOV","ADD","SUB","CMP","JNE","INT" };
 	char regi[21][3] = { "AX","BX","CX","DX","AH","AL","BH","BL","CH","CL","DH","DL","CS","IP","SP","BP","SS","SI","DI","DS","ES" };
 	
@@ -58,8 +56,6 @@ int main() {
 	int flag = 1;
 	while (!in.eof()) {	
 		ttmp = in.get();
-
-
 		if (ttmp != '	' && ttmp != ' ' && ttmp != ':'&& ttmp != '\n') {
 			if (ttmp != ',') {
 				tmp[tmpi] += ttmp;

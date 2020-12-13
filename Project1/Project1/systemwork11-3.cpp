@@ -15,10 +15,7 @@ public:
 		num = n;
 		labelflag = l;
 	}
-	void table_get() {
-		std::cout << data << endl;
-
-	}
+	void table_get() {	std::cout << data << endl;	}
 	string getdata() { return data; }
 	int getnum() { return num; }
 	int getlabelflag() { return labelflag; }
@@ -35,17 +32,14 @@ public:
 		list[listindex].table_set(d, n, l);
 		listindex++;
 	}
-
 	void print() {
 		for (int i = 0; i < listindex; i++)
 			std::cout << list[i].getdata() << "   " << list[i].getnum() << "   " << list[i].getlabelflag() << endl;
 	}
-
 	void labelregi(string d, int n, int l) {
 		label[labelindex].table_set(d, n, l);
 		labelindex++;
 	}
-
 };
 
 int main() {
@@ -65,8 +59,6 @@ int main() {
 	int flag = 1;
 	while (!in.eof()) {
 		ttmp = in.get();
-
-
 		if (ttmp != '	' && ttmp != ' ' && ttmp != ':' && ttmp != '\n') {
 			if (ttmp != ',') {
 				tmp[tmpi] += ttmp;
@@ -79,9 +71,7 @@ int main() {
 			}
 			index = i;
 			tmpi++;
-
 		}
-
 		if (ttmp == '\n') {
 			flag = 1;
 		}
@@ -90,7 +80,6 @@ int main() {
 		}
 		if (ttmp != '\n' && ttmp != '	' && ttmp != ' ')
 			i++;
-
 	}
 	in.close();
 

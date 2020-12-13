@@ -1,4 +1,5 @@
-	MOV   AX, BX
-	MOV   AL, BL
-	MOV   AX, BX
+	MOV	AL, BL
+	MOV	BX, SUM
+	MOV	SUM, CX
 SUM DW    ?
+

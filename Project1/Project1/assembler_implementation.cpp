@@ -45,23 +45,23 @@ void Initialize()
 {
 	int i = 0, j = 1;
 	FILE* regi, * inst;
-	regi = fopen("reg_tbl.txt", "r");
-	inst = fopen("inst_tbl.txt", "r");
+	regi = fopen("reg_tbl.txt", "r"); // 레지스터 테이블 읽음 
+	inst = fopen("inst_tbl.txt", "r"); // 명령어 테이블 읽음
 
-	while (!feof(regi))
+	while (!feof(regi)) // 레지스터 테이블 끝까지 읽음 feof는 마지막에 true값을 리턴함 즉, 마지막에 true리턴받으면 false가 되서 멈추는거임
 	{
-		fscanf(regi, "%s%s\n", Reg[i].reg_name, Reg[i].reg_num);
+		fscanf(regi, "%s%s\n", Reg[i].reg_name, Reg[i].reg_num); //  이름과 번호로 나눠서 저장
 		i++;
 	}     // 레지스터 테이블을 작성한다
 	while (!feof(inst))
 	{
-		fscanf(inst, "%6s%2s%2s%4s%3s%2s%9s\n", Instr[j].instruct,
+		fscanf(inst, "%6s%2s%2s%4s%3s%2s%9s\n", Instr[j].instruct, // 이름 , 목표 , 출발점, 8바이트인지 4바인트인지, ins_code ===> 값을 직접 쓰는건데 1바이트 값이 들어감, 코드길이(이거 중요함), r/m
 			Instr[j].dest, Instr[j].sour,
 			Instr[j].word_type, Instr[j].ins_code,
 			Instr[j].ins_len, Instr[j].mod_reg);
 		j++;
 	}     // 명령어 테이블을 작성한다.
-	MaxI = j - 1;
+	MaxI = j - 1; // 명령어 테이블 크기 저장
 	fclose(regi);
 	fclose(inst);
 }
@@ -84,33 +84,45 @@ int Analyze(char* operand)
 #define MAX_INS 1     // 명령어의 최대 개수를 지정
 int Add_Chk(char* sen)     // 오퍼랜드의 어드레스 모드를 판정
 {
-	register int k = MaxI;
+	register int k = MaxI; //명령어 테이블에 작성된 테이블 개수
 	int i = 0, j = 0, l = 0, wp = 0;
 	char op[5][10];
 	const char *opcode[] = { "mov","" };
-	while (sen[wp] != '\n')
+	
+	while (sen[wp] != '\n') // MOV AX, BX가 넘어왔다 치면 한글자씩 끈어서 개행( 끝문자)면 그만
 	{
 		while (sen[wp] == ' ' || sen[wp] == '\t' || sen[wp] == ',') wp++;     // 공백, 탭, 콤마는 통과
 
 		while (sen[wp] != ' ' && sen[wp] != '\t' && sen[wp] != '\n' && sen[wp] != ',')
 		{
-			*(op[j] + i) = sen[wp];
+			*(op[j] + i) = sen[wp]; // 한글자씩 넣는중
+			//printf("[%c]이거 뭐지?  [%d]  ", sen[wp],wp);
+			
 			i++;
 			wp++;
 		}
-		*(op[j] + i) = '\0';
+		*(op[j] + i) = '\0'; //마지막칸에 null넣음 op[i]에 단어씩 끊어서 들어감 예를 들면 op[0]=MOV	 op[1]=AL
 		i = 0;
 		j++;
 	}
 	i = 0;
-	while (strcmp(opcode[i], ""))
-		if (stricmp(opcode[i], op[0]))i++;
+
+	//printf("[%s]", opcode[1]);
+	while (strcmp(opcode[i], "")) { //strcmp는 같으면 0리턴 즉 같으면 멈춤,  i=0일때 mov임 안멈춤,  즉 레이블이 아닌거임
+		if (stricmp(opcode[i], op[0])) { //처음 들어왔을때 opcode[i]=mov고 op[0]=mov임 같음 같으면 0이라서 이거 안돌아감 sum같은게 들어와야함
+			i++; // 이게 되려면 명령어가 아니고 레이블인거임 SUM같은 MOV는 else로감
+		}
 		else
 		{
-			strcpy(Sen._operator, op[0]);
-			for (l = 1; l < j; l++) strcpy(Sen.operand[l - 1], op[l]);
+			strcpy(Sen._operator, op[0]); //MOV면? Sen._operator에 넣음 근데 기존 코드에서는 mov만 들어감
+			//printf("Sen._operator: [%s], op[0]: [%s] \n", Sen._operator, op[0]);
+			for (l = 1; l < j; l++) { 
+				strcpy(Sen.operand[l - 1], op[l]); 
+				//printf("Sen.operand[%d]: [%s], op[l]: [%s]\n",l-1, Sen.operand[l - 1],op[l]);
+			}
 			break;
 		}
+	}
 	if (i == MAX_INS)
 	{
 		strcpy(Sen.label, op[0]);
@@ -225,10 +237,11 @@ void PassII(char* buf)
 
 			else if (!strcmp(Instr[i].sour, "m"))
 				while (strcmp(Symbol[k].symbol, Sen.operand[1]))k++;
-			printf("%02X%02X %s", Symbol[k].lc, btoi(Instr[0].mod_reg), buf);  // 	printf(" %02X %04X %s", btoi(Instr[0].mod_reg),Symbol[k].lc,buf);
+			printf(" %02X %04X %s", btoi(Instr[0].mod_reg), Symbol[k].lc, buf);
 		}
 		LC += atoi(Instr[i].ins_len);
 	}
+	//printf("%02X%02X %s", Symbol[k].lc, btoi(Instr[0].mod_reg), buf);
 
 	else
 	{
@@ -246,14 +259,14 @@ void main()
 {
 	char buf[50];
 	FILE* in;
-	in = fopen("test1.asm", "r");
-	Initialize();
+	in = fopen("test1.asm", "r");  //  in으로 test1.asm 읽어옴
+	Initialize(); // 첫번째 함수 실행( 레지스터, 명령어 테이블 저장하는 함수임)
 	printf("\nPass1:\n");
 	while (1)
 	{
-		fgets(buf, 30, in);
+		fgets(buf, 30, in); //한줄씩 읽음
 		if (feof(in))break;
-		PassI(buf);
+		PassI(buf); // 한줄씩 읽어서 바로바로 출력함 이 함수에서 예를 들면 MOV AX, BX가 들어감
 	}
 	rewind(in);
 	LC = 0;
